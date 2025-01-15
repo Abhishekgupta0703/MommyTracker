@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LMPToDueDate from "./components/LMPToDueDate";
 import DueDateToLMP from "./components/DueDateToLMP";
-import Hero from "./components/Hero";
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
           <DueDateToLMP />
         </div>
       </main>
-      <Hero/>
       <Footer />
     </div>
   );

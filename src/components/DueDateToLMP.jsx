@@ -6,7 +6,8 @@ function DueDateToLMP() {
   const [dueDate, setDueDate] = useState("");
   const [result, setResult] = useState(null);
 
-  const handleCalculate = () => {
+  const handleCalculate = (e) => {
+    e.preventDefault();
     if (dueDate) {
       const lmp = calculateLMP(dueDate);
       const trimester = getTrimester(new Date(lmp));
@@ -18,6 +19,7 @@ function DueDateToLMP() {
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg">
       <h2 className="text-xl font-bold text-pink-600 mb-4">Due Date to LMP</h2>
+      <form onSubmit={handleCalculate}>
       <input
         type="date"
         value={dueDate}
@@ -25,11 +27,11 @@ function DueDateToLMP() {
         className="border-2 border-pink-300 p-2 rounded-lg w-full mb-4"
       />
       <button
-        onClick={handleCalculate}
+        type="submit"
         className="bg-pink-500 text-white px-4 py-2 rounded-lg w-full"
       >
         Calculate
-      </button>
+      </button></form>
       <ResultContainer result={result} exclude={["dueDate"]} />
 
     </div>

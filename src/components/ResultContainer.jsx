@@ -15,7 +15,7 @@ function ResultContainer({ result, exclude }) {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
         >
           {!exclude.includes("dueDate") && renderBox("Due Date", result.dueDate)}
-          {!exclude.includes("lmp") && renderBox("First Day of Last Period", result.lmp)}
+          {!exclude.includes("lmp") && renderBox("Last Period Date", result.lmp)}
           {renderBox("Trimester", result.trimester)}
           {renderBox("Current Month", result.month)}
           {renderBox("Current Week", result.week)}
